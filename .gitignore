@@ -1,0 +1,29 @@
+# --------------------
+# Project Artifacts to IGNORE
+# --------------------
+.venv/             # Ignore virtual environment
+venv/
+__pycache__/       # Ignore Python cache files
+*.pyc
+*.log
+
+# --------------------
+# Data & Results Policy
+# --------------------
+# General rule: Ignore large or sensitive files, but include the report.
+data/*
+!results/classification_report_90d_1pct.txt # EXCEPTION: Include the final TXT report
+
+# --------------------
+# Model Policy
+# --------------------
+# General rule: Ignore all models, but EXCEPTION for the one used in the final report.
+models/*
+!models/arima_trend_predictor_90d_1pct # EXCEPTION: Include the final ARIMA model file
+
+# --------------------
+# Notebooks Policy
+# --------------------
+# EXCEPTION: Include all the notebooks to show the analytical process.
+# This overrides any potential global ignore for *.ipynb
+!notebooks/
